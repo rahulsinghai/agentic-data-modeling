@@ -1,0 +1,20 @@
+{% if table_type == 'dimension' -%}
+CREATE TABLE {{ table.name }} (
+    {{ table.primary_key }} INTEGER PRIMARY KEY,
+    {% for attr in table.attributes -%}
+    {{ attr.name }} {{ attr.data_type }}{% if not loop.last %},{% endif %}
+    {% endfor -%}
+);
+{% elif table_type == 'fact' -%}
+CREATE TABLE {{ table.name }} (
+    {% for link in table.dimension_links -%}
+    {{ link.foreign_key }} INTEGER NOT NULL,
+    {% endfor -%}
+    {% for measure in table.measures -%}
+    {{ measure.name }} {{ measure.data_type }}{% if not loop.last or table.degenerate_dimensions %},{% endif %}
+    {% endfor -%}
+    {% for dd in table.degenerate_dimensions -%}
+    {{ dd }} VARCHAR{% if not loop.last %},{% endif %}
+    {% endfor -%}
+);
+{% endif -%}

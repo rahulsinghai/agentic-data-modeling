@@ -1,0 +1,19 @@
+quality_rules:
+  model: {{ config.model_name }}
+  rules:
+  {% for rule in config.rules %}
+    - name: {{ rule.name }}
+      type: {{ rule.rule_type.value }}
+      table: {{ rule.table }}
+      {% if rule.column -%}
+      column: {{ rule.column }}
+      {% endif -%}
+      severity: {{ rule.severity.value }}
+      description: "{{ rule.description }}"
+      {% if rule.config -%}
+      config:
+        {% for key, value in rule.config.items() -%}
+        {{ key }}: {{ value }}
+        {% endfor -%}
+      {% endif -%}
+  {% endfor %}

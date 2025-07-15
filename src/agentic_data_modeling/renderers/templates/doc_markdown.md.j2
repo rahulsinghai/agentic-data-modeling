@@ -1,0 +1,46 @@
+# {{ model.name }}
+
+{{ model.description }}
+
+## Business Requirements
+
+{{ model.business_requirements }}
+
+## Fact Tables
+
+{% for fact in model.facts %}
+### {{ fact.name }}
+
+{{ fact.description }}
+
+**Grain:** {{ fact.grain }}
+
+**Measures:**
+{% for m in fact.measures %}
+| {{ m.name }} | {{ m.data_type }} | {{ m.aggregation }} | {{ m.description }} |
+{% endfor %}
+
+**Dimension Links:**
+{% for link in fact.dimension_links %}
+- {{ link.dimension_name }} (via {{ link.foreign_key }})
+{% endfor %}
+
+{% endfor %}
+
+## Dimensions
+
+{% for dim in model.dimensions %}
+### {{ dim.name }}
+
+{{ dim.description }}
+
+**Type:** {{ dim.dimension_type.value }}
+**Primary Key:** {{ dim.primary_key }}
+
+| Attribute | Type | SCD | Description |
+|-----------|------|-----|-------------|
+{% for attr in dim.attributes -%}
+| {{ attr.name }} | {{ attr.data_type }} | {{ attr.scd_type.value }} | {{ attr.description }} |
+{% endfor %}
+
+{% endfor %}

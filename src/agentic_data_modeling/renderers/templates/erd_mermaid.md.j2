@@ -1,0 +1,24 @@
+erDiagram
+{% for dim in model.dimensions %}
+    {{ dim.name }} {
+        {{ dim.primary_key }} int PK
+        {% for attr in dim.attributes -%}
+        {{ attr.name }} {{ attr.data_type }}
+        {% endfor -%}
+    }
+{% endfor %}
+{% for fact in model.facts %}
+    {{ fact.name }} {
+        {% for link in fact.dimension_links -%}
+        {{ link.foreign_key }} int FK
+        {% endfor -%}
+        {% for measure in fact.measures -%}
+        {{ measure.name }} {{ measure.data_type }}
+        {% endfor -%}
+    }
+{% endfor %}
+{% for fact in model.facts %}
+    {% for link in fact.dimension_links -%}
+    {{ link.dimension_name }} ||--o{ {{ fact.name }} : "{{ link.foreign_key }}"
+    {% endfor -%}
+{% endfor %}

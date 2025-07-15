@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: {{ source.name }}
+    description: "{{ source.description }}"
+    {% if source.database %}
+    database: {{ source.database }}
+    {% endif %}
+    schema: {{ source.schema_name }}
+    tables:
+    {% for table in source.tables %}
+      - name: {{ table }}
+    {% endfor %}

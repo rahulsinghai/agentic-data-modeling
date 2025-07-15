@@ -1,0 +1,18 @@
+version: 2
+
+models:
+{% for model in project.models %}
+  - name: {{ model.name }}
+    description: "{{ model.description }}"
+    columns:
+    {% for col in model.columns %}
+      - name: {{ col.name }}
+        description: "{{ col.description }}"
+        {% if col.tests %}
+        tests:
+          {% for test in col.tests %}
+          - {{ test }}
+          {% endfor %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
