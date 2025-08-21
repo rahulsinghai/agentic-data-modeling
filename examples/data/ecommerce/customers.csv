@@ -1,0 +1,201 @@
+customer_id,first_name,last_name,email,city,state,country,created_at
+1,Chris,Brown,chris.brown1@email.com,New York,NY,US,2024-05-20 07:14:00
+2,Robert,Brown,robert.brown2@email.com,Dallas,TX,US,2024-02-14 18:27:00
+3,Mary,Smith,mary.smith3@email.com,Los Angeles,CA,US,2024-04-21 07:32:00
+4,Karen,Smith,karen.smith4@email.com,Dallas,TX,US,2024-04-11 22:41:00
+5,Daniel,Moore,daniel.moore5@email.com,San Antonio,TX,US,2024-04-22 14:37:00
+6,David,Smith,david.smith6@email.com,Chicago,IL,US,2024-12-23 13:21:00
+7,David,Jones,david.jones7@email.com,Houston,TX,US,2024-06-21 03:05:00
+8,Richard,Brown,richard.brown8@email.com,Philadelphia,PA,US,2024-06-25 19:16:00
+9,Betty,Johnson,betty.johnson9@email.com,San Diego,CA,US,2024-10-01 03:59:00
+10,Richard,Williams,richard.williams10@email.com,Dallas,TX,US,2024-05-30 20:39:00
+11,Donald,Lopez,donald.lopez11@email.com,San Jose,CA,US,2024-04-08 22:04:00
+12,Mary,Davis,mary.davis12@email.com,Phoenix,AZ,US,2024-02-10 07:55:00
+13,Patricia,Gonzalez,patricia.gonzalez13@email.com,Phoenix,AZ,US,2024-08-20 20:53:00
+14,Elizabeth,Garcia,elizabeth.garcia14@email.com,Philadelphia,PA,US,2024-06-30 06:42:00
+15,David,Williams,david.williams15@email.com,San Jose,CA,US,2024-11-21 05:34:00
+16,Nancy,Davis,nancy.davis16@email.com,Chicago,IL,US,2024-08-24 12:17:00
+17,Sandra,Moore,sandra.moore17@email.com,Houston,TX,US,2024-12-16 10:53:00
+18,Matt,Johnson,matt.johnson18@email.com,Houston,TX,US,2024-01-17 10:25:00
+19,David,Williams,david.williams19@email.com,Houston,TX,US,2024-10-17 22:20:00
+20,Michael,Thomas,michael.thomas20@email.com,San Antonio,TX,US,2024-11-25 14:09:00
+21,David,Jones,david.jones21@email.com,Houston,TX,US,2024-10-14 17:16:00
+22,Nancy,Jackson,nancy.jackson22@email.com,San Antonio,TX,US,2024-10-25 12:23:00
+23,Linda,Jones,linda.jones23@email.com,Dallas,TX,US,2024-09-09 02:48:00
+24,Mary,Brown,mary.brown24@email.com,Chicago,IL,US,2024-11-17 05:50:00
+25,Lisa,Wilson,lisa.wilson25@email.com,San Jose,CA,US,2024-02-02 12:24:00
+26,Karen,Anderson,karen.anderson26@email.com,Dallas,TX,US,2024-05-08 17:55:00
+27,James,Brown,james.brown27@email.com,Dallas,TX,US,2024-05-16 20:21:00
+28,Patricia,Martinez,patricia.martinez28@email.com,San Antonio,TX,US,2024-03-21 14:00:00
+29,Nancy,Rodriguez,nancy.rodriguez29@email.com,Dallas,TX,US,2024-04-01 16:58:00
+30,Patricia,Martinez,patricia.martinez30@email.com,Dallas,TX,US,2024-11-07 06:09:00
+31,Elizabeth,Garcia,elizabeth.garcia31@email.com,Dallas,TX,US,2024-09-28 00:38:00
+32,William,Thomas,william.thomas32@email.com,New York,NY,US,2024-02-27 11:56:00
+33,Mark,Martinez,mark.martinez33@email.com,Houston,TX,US,2024-01-30 07:56:00
+34,Charles,Williams,charles.williams34@email.com,Los Angeles,CA,US,2024-09-05 02:48:00
+35,Sarah,Jones,sarah.jones35@email.com,Chicago,IL,US,2024-12-03 15:35:00
+36,Jennifer,Rodriguez,jennifer.rodriguez36@email.com,Dallas,TX,US,2024-11-06 13:13:00
+37,Sandra,Moore,sandra.moore37@email.com,Houston,TX,US,2024-06-08 12:42:00
+38,Chris,Lopez,chris.lopez38@email.com,San Diego,CA,US,2024-09-21 14:07:00
+39,Linda,Davis,linda.davis39@email.com,Los Angeles,CA,US,2024-06-22 00:37:00
+40,Sarah,Davis,sarah.davis40@email.com,San Jose,CA,US,2024-04-22 00:04:00
+41,Daniel,Johnson,daniel.johnson41@email.com,Houston,TX,US,2024-02-04 01:55:00
+42,William,Williams,william.williams42@email.com,Dallas,TX,US,2024-05-01 08:42:00
+43,Jessica,Miller,jessica.miller43@email.com,Dallas,TX,US,2024-03-08 23:59:00
+44,Donald,Jackson,donald.jackson44@email.com,San Jose,CA,US,2024-08-30 07:50:00
+45,Jessica,Wilson,jessica.wilson45@email.com,Houston,TX,US,2024-02-18 03:42:00
+46,Susan,Lopez,susan.lopez46@email.com,San Antonio,TX,US,2024-07-29 14:55:00
+47,Nancy,Johnson,nancy.johnson47@email.com,Los Angeles,CA,US,2024-02-01 12:46:00
+48,William,Brown,william.brown48@email.com,Houston,TX,US,2024-04-08 06:34:00
+49,Joseph,Jones,joseph.jones49@email.com,San Antonio,TX,US,2024-04-03 08:29:00
+50,Linda,Williams,linda.williams50@email.com,San Diego,CA,US,2024-10-08 03:03:00
+51,Chris,Moore,chris.moore51@email.com,New York,NY,US,2024-02-17 07:10:00
+52,Susan,Thomas,susan.thomas52@email.com,San Diego,CA,US,2024-04-19 12:57:00
+53,Mary,Garcia,mary.garcia53@email.com,San Antonio,TX,US,2024-01-02 12:16:00
+54,Sandra,Anderson,sandra.anderson54@email.com,Phoenix,AZ,US,2024-08-04 22:46:00
+55,Betty,Moore,betty.moore55@email.com,San Diego,CA,US,2024-03-20 06:18:00
+56,Michael,Johnson,michael.johnson56@email.com,San Jose,CA,US,2024-10-04 01:47:00
+57,William,Johnson,william.johnson57@email.com,New York,NY,US,2024-10-26 15:32:00
+58,Sandra,Taylor,sandra.taylor58@email.com,Chicago,IL,US,2024-01-30 16:05:00
+59,Margaret,Garcia,margaret.garcia59@email.com,Los Angeles,CA,US,2024-10-31 02:43:00
+60,Margaret,Davis,margaret.davis60@email.com,San Antonio,TX,US,2024-03-02 18:15:00
+61,Charles,Martin,charles.martin61@email.com,New York,NY,US,2024-11-13 02:26:00
+62,Lisa,Jackson,lisa.jackson62@email.com,San Jose,CA,US,2024-09-24 10:59:00
+63,David,Miller,david.miller63@email.com,Philadelphia,PA,US,2024-05-02 08:25:00
+64,Robert,Martinez,robert.martinez64@email.com,San Diego,CA,US,2024-06-10 02:00:00
+65,Joseph,Martin,joseph.martin65@email.com,San Jose,CA,US,2024-02-21 02:34:00
+66,Michael,Taylor,michael.taylor66@email.com,Phoenix,AZ,US,2024-03-08 11:56:00
+67,John,Davis,john.davis67@email.com,Philadelphia,PA,US,2024-05-25 05:28:00
+68,Mark,Moore,mark.moore68@email.com,Phoenix,AZ,US,2024-11-09 20:33:00
+69,James,Moore,james.moore69@email.com,Phoenix,AZ,US,2024-12-05 03:56:00
+70,Robert,Rodriguez,robert.rodriguez70@email.com,Los Angeles,CA,US,2024-02-24 23:35:00
+71,Robert,Rodriguez,robert.rodriguez71@email.com,Phoenix,AZ,US,2024-11-05 06:45:00
+72,William,Miller,william.miller72@email.com,Phoenix,AZ,US,2024-09-15 15:16:00
+73,Donald,Johnson,donald.johnson73@email.com,Los Angeles,CA,US,2024-11-20 13:53:00
+74,David,Johnson,david.johnson74@email.com,New York,NY,US,2024-06-19 04:40:00
+75,David,Garcia,david.garcia75@email.com,San Diego,CA,US,2024-10-09 22:27:00
+76,Sarah,Smith,sarah.smith76@email.com,Los Angeles,CA,US,2024-02-08 22:57:00
+77,Robert,Moore,robert.moore77@email.com,New York,NY,US,2024-07-08 18:35:00
+78,Robert,Wilson,robert.wilson78@email.com,Chicago,IL,US,2024-01-22 09:23:00
+79,Donald,Johnson,donald.johnson79@email.com,Philadelphia,PA,US,2024-04-17 21:15:00
+80,Lisa,Brown,lisa.brown80@email.com,Philadelphia,PA,US,2024-10-13 13:39:00
+81,Nancy,Jones,nancy.jones81@email.com,Houston,TX,US,2024-03-24 05:56:00
+82,Susan,Smith,susan.smith82@email.com,Chicago,IL,US,2024-06-19 13:51:00
+83,Lisa,Davis,lisa.davis83@email.com,Phoenix,AZ,US,2024-03-22 22:06:00
+84,Richard,Johnson,richard.johnson84@email.com,San Diego,CA,US,2024-04-23 06:52:00
+85,Sandra,Anderson,sandra.anderson85@email.com,Philadelphia,PA,US,2024-06-05 07:14:00
+86,James,Miller,james.miller86@email.com,San Antonio,TX,US,2024-06-17 08:55:00
+87,John,Rodriguez,john.rodriguez87@email.com,Philadelphia,PA,US,2024-11-24 16:25:00
+88,Lisa,Moore,lisa.moore88@email.com,Philadelphia,PA,US,2024-01-15 03:56:00
+89,David,Garcia,david.garcia89@email.com,San Jose,CA,US,2024-05-15 01:06:00
+90,Karen,Wilson,karen.wilson90@email.com,Philadelphia,PA,US,2024-06-09 13:38:00
+91,Thomas,Brown,thomas.brown91@email.com,San Antonio,TX,US,2024-10-22 06:16:00
+92,Mary,Wilson,mary.wilson92@email.com,New York,NY,US,2024-09-23 17:43:00
+93,Nancy,Miller,nancy.miller93@email.com,Philadelphia,PA,US,2024-08-08 02:42:00
+94,Sandra,Hernandez,sandra.hernandez94@email.com,San Jose,CA,US,2024-06-09 21:54:00
+95,Patricia,Martinez,patricia.martinez95@email.com,Dallas,TX,US,2024-06-07 21:26:00
+96,William,Gonzalez,william.gonzalez96@email.com,Phoenix,AZ,US,2024-10-10 04:12:00
+97,Susan,Gonzalez,susan.gonzalez97@email.com,Chicago,IL,US,2024-11-11 18:19:00
+98,Richard,Moore,richard.moore98@email.com,New York,NY,US,2024-06-04 09:13:00
+99,Susan,Jackson,susan.jackson99@email.com,San Jose,CA,US,2024-12-01 10:29:00
+100,Joseph,Anderson,joseph.anderson100@email.com,Houston,TX,US,2024-09-18 15:50:00
+101,Donald,Garcia,donald.garcia101@email.com,Los Angeles,CA,US,2024-05-25 16:42:00
+102,Chris,Martin,chris.martin102@email.com,Philadelphia,PA,US,2024-02-17 07:43:00
+103,Barbara,Davis,barbara.davis103@email.com,Houston,TX,US,2024-03-16 00:02:00
+104,Linda,Thomas,linda.thomas104@email.com,San Jose,CA,US,2024-02-07 14:26:00
+105,Donald,Jackson,donald.jackson105@email.com,Houston,TX,US,2024-12-22 12:31:00
+106,Richard,Davis,richard.davis106@email.com,Chicago,IL,US,2024-12-01 22:00:00
+107,Donald,Brown,donald.brown107@email.com,San Antonio,TX,US,2024-04-22 05:51:00
+108,Daniel,Taylor,daniel.taylor108@email.com,San Diego,CA,US,2024-01-26 17:15:00
+109,Sandra,Brown,sandra.brown109@email.com,San Diego,CA,US,2024-03-09 14:42:00
+110,Thomas,Moore,thomas.moore110@email.com,San Jose,CA,US,2024-06-11 14:39:00
+111,Mark,Taylor,mark.taylor111@email.com,San Antonio,TX,US,2024-10-07 14:57:00
+112,Jennifer,Thomas,jennifer.thomas112@email.com,San Diego,CA,US,2024-05-12 07:53:00
+113,Chris,Rodriguez,chris.rodriguez113@email.com,Dallas,TX,US,2024-09-05 20:15:00
+114,David,Anderson,david.anderson114@email.com,Los Angeles,CA,US,2024-05-26 07:17:00
+115,William,Hernandez,william.hernandez115@email.com,Dallas,TX,US,2024-02-11 04:09:00
+116,Linda,Gonzalez,linda.gonzalez116@email.com,Chicago,IL,US,2024-12-27 06:04:00
+117,Susan,Wilson,susan.wilson117@email.com,Philadelphia,PA,US,2024-10-04 14:26:00
+118,Mary,Miller,mary.miller118@email.com,San Antonio,TX,US,2024-07-18 18:44:00
+119,James,Jackson,james.jackson119@email.com,San Antonio,TX,US,2024-09-01 00:22:00
+120,Barbara,Gonzalez,barbara.gonzalez120@email.com,San Antonio,TX,US,2024-10-02 23:47:00
+121,Sarah,Martin,sarah.martin121@email.com,Houston,TX,US,2024-09-06 07:17:00
+122,Susan,Thomas,susan.thomas122@email.com,New York,NY,US,2024-07-18 10:42:00
+123,Lisa,Gonzalez,lisa.gonzalez123@email.com,Chicago,IL,US,2024-08-27 04:39:00
+124,Sarah,Smith,sarah.smith124@email.com,San Antonio,TX,US,2024-10-30 18:42:00
+125,James,Williams,james.williams125@email.com,San Antonio,TX,US,2024-03-10 14:11:00
+126,Mary,Rodriguez,mary.rodriguez126@email.com,San Antonio,TX,US,2024-06-16 06:29:00
+127,William,Hernandez,william.hernandez127@email.com,San Antonio,TX,US,2024-05-22 13:16:00
+128,Mark,Williams,mark.williams128@email.com,San Diego,CA,US,2024-01-10 23:34:00
+129,Mary,Lopez,mary.lopez129@email.com,Houston,TX,US,2024-11-28 02:49:00
+130,Chris,Johnson,chris.johnson130@email.com,New York,NY,US,2024-05-06 06:53:00
+131,James,Martin,james.martin131@email.com,Chicago,IL,US,2024-05-02 04:30:00
+132,Lisa,Brown,lisa.brown132@email.com,San Jose,CA,US,2024-04-21 14:44:00
+133,David,Lopez,david.lopez133@email.com,Chicago,IL,US,2024-11-06 19:47:00
+134,Daniel,Brown,daniel.brown134@email.com,Chicago,IL,US,2024-06-08 03:37:00
+135,James,Martinez,james.martinez135@email.com,San Jose,CA,US,2024-12-12 12:25:00
+136,Daniel,Miller,daniel.miller136@email.com,Los Angeles,CA,US,2024-10-30 22:53:00
+137,Chris,Davis,chris.davis137@email.com,Los Angeles,CA,US,2024-12-22 09:54:00
+138,Lisa,Martin,lisa.martin138@email.com,Los Angeles,CA,US,2024-10-16 01:22:00
+139,Sarah,Wilson,sarah.wilson139@email.com,Philadelphia,PA,US,2024-02-05 16:41:00
+140,William,Smith,william.smith140@email.com,San Antonio,TX,US,2024-09-07 03:27:00
+141,Elizabeth,Anderson,elizabeth.anderson141@email.com,Chicago,IL,US,2024-08-10 05:46:00
+142,Thomas,Rodriguez,thomas.rodriguez142@email.com,San Jose,CA,US,2024-10-02 15:29:00
+143,Susan,Jackson,susan.jackson143@email.com,Phoenix,AZ,US,2024-06-14 07:53:00
+144,Sandra,Williams,sandra.williams144@email.com,Phoenix,AZ,US,2024-08-18 07:48:00
+145,Joseph,Jackson,joseph.jackson145@email.com,San Jose,CA,US,2024-12-08 12:21:00
+146,James,Thomas,james.thomas146@email.com,Philadelphia,PA,US,2024-04-03 15:13:00
+147,Elizabeth,Rodriguez,elizabeth.rodriguez147@email.com,Philadelphia,PA,US,2024-05-23 19:44:00
+148,Donald,Rodriguez,donald.rodriguez148@email.com,Dallas,TX,US,2024-01-06 16:12:00
+149,John,Davis,john.davis149@email.com,San Antonio,TX,US,2024-09-07 17:48:00
+150,Linda,Thomas,linda.thomas150@email.com,San Diego,CA,US,2024-08-17 00:05:00
+151,Barbara,Davis,barbara.davis151@email.com,San Antonio,TX,US,2024-12-20 07:19:00
+152,Lisa,Jackson,lisa.jackson152@email.com,Philadelphia,PA,US,2024-08-30 17:33:00
+153,Elizabeth,Wilson,elizabeth.wilson153@email.com,Dallas,TX,US,2024-06-18 11:44:00
+154,Joseph,Rodriguez,joseph.rodriguez154@email.com,Phoenix,AZ,US,2024-05-08 07:07:00
+155,Nancy,Miller,nancy.miller155@email.com,Philadelphia,PA,US,2024-03-02 23:34:00
+156,Matt,Garcia,matt.garcia156@email.com,Houston,TX,US,2024-04-20 23:30:00
+157,David,Jackson,david.jackson157@email.com,Dallas,TX,US,2024-11-01 09:06:00
+158,Mark,Miller,mark.miller158@email.com,Phoenix,AZ,US,2024-04-26 11:11:00
+159,Barbara,Smith,barbara.smith159@email.com,Dallas,TX,US,2024-03-05 08:02:00
+160,Mary,Moore,mary.moore160@email.com,Phoenix,AZ,US,2024-12-23 04:40:00
+161,Margaret,Thomas,margaret.thomas161@email.com,Los Angeles,CA,US,2024-01-07 18:18:00
+162,Jessica,Thomas,jessica.thomas162@email.com,San Diego,CA,US,2024-06-23 05:03:00
+163,David,Thomas,david.thomas163@email.com,Los Angeles,CA,US,2024-02-03 12:31:00
+164,John,Jackson,john.jackson164@email.com,New York,NY,US,2024-03-18 04:51:00
+165,Charles,Martinez,charles.martinez165@email.com,Los Angeles,CA,US,2024-05-07 03:35:00
+166,Matt,Wilson,matt.wilson166@email.com,San Jose,CA,US,2024-11-01 19:14:00
+167,Matt,Taylor,matt.taylor167@email.com,San Antonio,TX,US,2024-08-18 14:19:00
+168,Margaret,Jackson,margaret.jackson168@email.com,San Antonio,TX,US,2024-06-05 18:39:00
+169,Mary,Martin,mary.martin169@email.com,Los Angeles,CA,US,2024-04-16 20:13:00
+170,David,Williams,david.williams170@email.com,Chicago,IL,US,2024-05-02 05:35:00
+171,John,Garcia,john.garcia171@email.com,New York,NY,US,2024-07-28 14:44:00
+172,Karen,Thomas,karen.thomas172@email.com,Phoenix,AZ,US,2024-01-17 07:18:00
+173,Daniel,Martinez,daniel.martinez173@email.com,San Diego,CA,US,2024-02-06 21:14:00
+174,Sandra,Rodriguez,sandra.rodriguez174@email.com,San Jose,CA,US,2024-12-04 06:27:00
+175,Patricia,Moore,patricia.moore175@email.com,Houston,TX,US,2024-11-27 04:58:00
+176,David,Jones,david.jones176@email.com,Los Angeles,CA,US,2024-01-31 05:50:00
+177,Barbara,Martin,barbara.martin177@email.com,San Jose,CA,US,2024-05-27 14:07:00
+178,Joseph,Martinez,joseph.martinez178@email.com,San Antonio,TX,US,2024-05-19 16:34:00
+179,Jessica,Anderson,jessica.anderson179@email.com,Los Angeles,CA,US,2024-11-02 01:56:00
+180,Susan,Hernandez,susan.hernandez180@email.com,San Jose,CA,US,2024-05-08 00:05:00
+181,Linda,Jackson,linda.jackson181@email.com,San Jose,CA,US,2024-01-11 21:52:00
+182,David,Jackson,david.jackson182@email.com,New York,NY,US,2024-03-30 15:33:00
+183,Chris,Anderson,chris.anderson183@email.com,Phoenix,AZ,US,2024-04-02 18:27:00
+184,Chris,Thomas,chris.thomas184@email.com,Los Angeles,CA,US,2024-08-28 11:26:00
+185,William,Hernandez,william.hernandez185@email.com,Los Angeles,CA,US,2024-03-23 10:26:00
+186,Daniel,Thomas,daniel.thomas186@email.com,Phoenix,AZ,US,2024-12-05 12:52:00
+187,Matt,Moore,matt.moore187@email.com,New York,NY,US,2024-08-20 02:20:00
+188,David,Hernandez,david.hernandez188@email.com,Los Angeles,CA,US,2024-07-25 16:52:00
+189,James,Moore,james.moore189@email.com,San Diego,CA,US,2024-07-30 01:12:00
+190,Thomas,Lopez,thomas.lopez190@email.com,San Jose,CA,US,2024-09-12 20:28:00
+191,Matt,Johnson,matt.johnson191@email.com,Houston,TX,US,2024-05-16 17:08:00
+192,Sandra,Martinez,sandra.martinez192@email.com,San Diego,CA,US,2024-12-23 15:07:00
+193,James,Martin,james.martin193@email.com,Houston,TX,US,2024-12-29 05:19:00
+194,Sarah,Smith,sarah.smith194@email.com,Dallas,TX,US,2024-07-27 02:14:00
+195,Mark,Brown,mark.brown195@email.com,San Diego,CA,US,2024-03-01 20:53:00
+196,Robert,Thomas,robert.thomas196@email.com,Phoenix,AZ,US,2024-09-17 22:17:00
+197,Susan,Thomas,susan.thomas197@email.com,San Diego,CA,US,2024-05-04 14:35:00
+198,Robert,Gonzalez,robert.gonzalez198@email.com,Houston,TX,US,2024-11-02 16:47:00
+199,Donald,Jones,donald.jones199@email.com,Los Angeles,CA,US,2024-05-21 13:21:00
+200,Sandra,Taylor,sandra.taylor200@email.com,Phoenix,AZ,US,2024-01-02 09:46:00

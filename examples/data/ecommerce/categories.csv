@@ -1,0 +1,11 @@
+category_id,category_name,parent_category_id
+1,Electronics,
+2,Clothing,
+3,Home & Kitchen,
+4,Books,
+5,Sports,
+6,Beauty,
+7,Toys,
+8,Smartphones,1
+9,Men's Clothing,2
+10,Cookware,3
