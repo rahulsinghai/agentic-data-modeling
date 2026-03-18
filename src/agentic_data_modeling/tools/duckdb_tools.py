@@ -2,27 +2,46 @@
 
 from __future__ import annotations
 
-import contextvars
+import threading
+from contextlib import contextmanager
 from pathlib import Path
+from typing import Generator
 
 import duckdb
 from langchain_core.tools import tool
 
-_connection: contextvars.ContextVar[duckdb.DuckDBPyConnection | None] = contextvars.ContextVar(
-    "duckdb_connection", default=None
-)
+# Single in-memory connection shared across the process.
+# RLock serializes every execute+fetch block so concurrent tool calls
+# (LangGraph runs them in a ThreadPoolExecutor) don't race.
+_connection: duckdb.DuckDBPyConnection = duckdb.connect(":memory:")
+_lock = threading.RLock()
+
+
+@contextmanager
+def _db() -> Generator[duckdb.DuckDBPyConnection, None, None]:
+    """Acquire the lock and yield the shared connection."""
+    with _lock:
+        yield _connection
 
 
 def get_connection() -> duckdb.DuckDBPyConnection:
-    conn = _connection.get()
-    if conn is None:
-        conn = duckdb.connect(":memory:")
-        _connection.set(conn)
-    return conn
+    return _connection
 
 
-def set_connection(conn: duckdb.DuckDBPyConnection) -> None:
-    _connection.set(conn)
+def set_connection(conn: duckdb.DuckDBPyConnection | None) -> None:
+    global _connection
+    _connection = conn or duckdb.connect(":memory:")
+
+
+def reset_connection() -> None:
+    """Close current DB and start fresh — call between pipeline runs."""
+    global _connection
+    with _lock:
+        try:
+            _connection.close()
+        except Exception:
+            pass
+        _connection = duckdb.connect(":memory:")
 
 
 @tool
@@ -32,11 +51,11 @@ def run_query(sql: str) -> str:
     Args:
         sql: SQL query to execute.
     """
-    conn = get_connection()
     try:
-        result = conn.execute(sql)
-        columns = [desc[0] for desc in result.description]
-        rows = result.fetchall()
+        with _db() as conn:
+            result = conn.execute(sql)
+            columns = [desc[0] for desc in result.description]
+            rows = result.fetchall()
         if not rows:
             return "Query returned 0 rows."
         header = " | ".join(columns)
@@ -63,12 +82,12 @@ def load_csv(file_path: str, table_name: str | None = None) -> str:
     if not path.exists():
         return f"Error: File not found: {file_path}"
     name = table_name or path.stem
-    conn = get_connection()
     try:
-        conn.execute(
-            f"CREATE OR REPLACE TABLE {name} AS SELECT * FROM read_csv_auto('{path}')"
-        )
-        count = conn.execute(f"SELECT count(*) FROM {name}").fetchone()[0]
+        with _db() as conn:
+            conn.execute(
+                f"CREATE OR REPLACE TABLE {name} AS SELECT * FROM read_csv_auto('{path}')"
+            )
+            count = conn.execute(f"SELECT count(*) FROM {name}").fetchone()[0]
         return f"Loaded {count} rows into table '{name}' from {path.name}"
     except Exception as e:
         return f"Error loading CSV: {e}"
@@ -86,12 +105,12 @@ def load_json(file_path: str, table_name: str | None = None) -> str:
     if not path.exists():
         return f"Error: File not found: {file_path}"
     name = table_name or path.stem
-    conn = get_connection()
     try:
-        conn.execute(
-            f"CREATE OR REPLACE TABLE {name} AS SELECT * FROM read_json_auto('{path}')"
-        )
-        count = conn.execute(f"SELECT count(*) FROM {name}").fetchone()[0]
+        with _db() as conn:
+            conn.execute(
+                f"CREATE OR REPLACE TABLE {name} AS SELECT * FROM read_json_auto('{path}')"
+            )
+            count = conn.execute(f"SELECT count(*) FROM {name}").fetchone()[0]
         return f"Loaded {count} rows into table '{name}' from {path.name}"
     except Exception as e:
         return f"Error loading JSON: {e}"
@@ -100,8 +119,8 @@ def load_json(file_path: str, table_name: str | None = None) -> str:
 @tool
 def list_tables() -> str:
     """List all tables currently loaded in DuckDB."""
-    conn = get_connection()
-    tables = conn.execute("SHOW TABLES").fetchall()
+    with _db() as conn:
+        tables = conn.execute("SHOW TABLES").fetchall()
     if not tables:
         return "No tables loaded."
     return "\n".join(f"- {t[0]}" for t in tables)
@@ -114,9 +133,9 @@ def describe_table(table_name: str) -> str:
     Args:
         table_name: Name of the table to describe.
     """
-    conn = get_connection()
     try:
-        cols = conn.execute(f"DESCRIBE {table_name}").fetchall()
+        with _db() as conn:
+            cols = conn.execute(f"DESCRIBE {table_name}").fetchall()
         lines = [f"{'Column':<30} {'Type':<20} {'Null':<6}"]
         lines.append("-" * 56)
         for col in cols:

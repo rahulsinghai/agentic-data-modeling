@@ -34,6 +34,7 @@
 ._*
 .apdisk
 .cache
+.claude/
 .com.apple.timemachine.donotpresent
 .coverage
 .coverage.*

@@ -7,7 +7,7 @@ from pathlib import Path
 
 import typer
 from rich.console import Console
-from rich.status import Status
+from rich.rule import Rule
 
 console = Console()
 
@@ -17,35 +17,36 @@ def profile_cmd(
     output_dir: Path = typer.Option("output", help="Output directory for artifacts"),
 ) -> None:
     """Profile source data files and detect schemas, keys, and grain."""
-    from agentic_data_modeling.agents.profiler import profiler_node
+    from langchain_core.messages import HumanMessage
 
-    console.print(f"[bold]Profiling data in:[/bold] {source_dir}")
+    from agentic_data_modeling.agents.profiler import create_profiler_agent
+    from agentic_data_modeling.cli.callbacks import PipelineCallbackHandler
+    from agentic_data_modeling.tools.duckdb_tools import reset_connection
+
+    reset_connection()
+
+    handler = PipelineCallbackHandler(console)
+    console.print(Rule("[bold]Profiling source data[/bold]", style="dim"))
+
     start = time.monotonic()
-    final_state: dict = {}
-
-    with Status("Running profiler agent...", console=console):
-        final_state = profiler_node(
-            {
-                "messages": [],
-                "source_dir": str(source_dir.resolve()),
-                "output_dir": str(output_dir.resolve()),
-                "requirements": "",
-                "next_agent": "",
-                "profiles_json": "",
-                "model_json": "",
-                "dbt_project_json": "",
-                "quality_config_json": "",
-                "artifacts": {},
-                "completed_agents": [],
-            }
-        )
+    agent = create_profiler_agent()
+    result = agent.invoke(
+        {
+            "messages": [
+                HumanMessage(
+                    content=f"Profile all data files in: {source_dir.resolve()}"
+                )
+            ]
+        },
+        config={"callbacks": [handler]},
+    )
 
     elapsed = time.monotonic() - start
-    console.print(f"  [green]✓[/green] Profiling complete [dim]({elapsed:.1f}s)[/dim]")
+    console.print(f"\n  [green]✓[/green] Profiling complete [dim]({elapsed:.1f}s)[/dim]")
 
-    profiles = final_state.get("profiles_json", "")
+    profiles = result["messages"][-1].content
     if profiles:
         out_path = output_dir / "profiles.json"
         out_path.parent.mkdir(parents=True, exist_ok=True)
         out_path.write_text(profiles)
-        console.print(f"Profiles saved to: {out_path}")
+        console.print(f"Profiles → {out_path}")
