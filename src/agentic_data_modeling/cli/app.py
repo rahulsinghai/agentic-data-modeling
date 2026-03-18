@@ -11,7 +11,7 @@ from agentic_data_modeling.cli.run_cmd import run_cmd
 
 app = typer.Typer(
     name="adm",
-    help="Agentic Data Modeling — AI-powered dimensional modeling pipeline",
+    help="Agentic Data Modeling; AI-powered dimensional modeling pipeline",
     no_args_is_help=True,
 )
 

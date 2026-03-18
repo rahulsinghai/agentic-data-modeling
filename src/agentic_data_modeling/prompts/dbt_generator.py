@@ -12,8 +12,8 @@ SQL models and schema definitions.
 7. Use write_artifact to save each file to the output directory.
 
 ## Conventions
-- Staging: stg_<source>__<table>.sql — rename, cast, minimal transforms
-- Intermediate: int_<description>.sql — joins, business logic
-- Mart: dim_<name>.sql / fct_<name>.sql — final star schema tables
+- Staging: stg_<source>__<table>.sql; rename, cast, minimal transforms
+- Intermediate: int_<description>.sql; joins, business logic
+- Mart: dim_<name>.sql / fct_<name>.sql; final star schema tables
 - schema.yml: not_null/unique tests on keys, accepted_values where appropriate
 """

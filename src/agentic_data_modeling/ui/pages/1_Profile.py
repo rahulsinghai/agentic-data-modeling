@@ -1,4 +1,4 @@
-"""Profile page — upload and profile source data."""
+"""Profile page; upload and profile source data."""
 
 import tempfile
 from pathlib import Path

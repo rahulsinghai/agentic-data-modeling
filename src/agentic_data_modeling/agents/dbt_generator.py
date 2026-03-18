@@ -16,15 +16,14 @@ from agentic_data_modeling.tools.file_tools import write_artifact
 
 
 def _make_llm():
-    from langchain_anthropic import ChatAnthropic
+    from langchain_openai import ChatOpenAI
 
     from agentic_data_modeling.config import get_settings
 
     settings = get_settings()
-    return ChatAnthropic(
+    return ChatOpenAI(
         model=settings.model,
-        api_key=settings.anthropic_api_key,
-        max_tokens=settings.max_tokens,
+        api_key=settings.openai_api_key,
         temperature=settings.temperature,
     )
 

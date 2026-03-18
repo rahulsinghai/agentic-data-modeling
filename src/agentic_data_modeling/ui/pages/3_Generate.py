@@ -1,4 +1,4 @@
-"""Generate page — produce artifacts."""
+"""Generate page; produce artifacts."""
 
 import streamlit as st
 

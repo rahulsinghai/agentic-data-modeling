@@ -12,5 +12,5 @@ of each table.
 6. Use detect_foreign_keys for each table (pass all table names).
 7. Summarize your findings as a structured JSON array of SourceTableProfile objects.
 
-Be thorough — profile every column. Output valid JSON at the end.
+Be thorough; profile every column. Output valid JSON at the end.
 """

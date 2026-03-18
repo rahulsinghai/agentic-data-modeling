@@ -1,4 +1,4 @@
-"""Explore page — interactive SQL queries."""
+"""Explore page; interactive SQL queries."""
 
 import streamlit as st
 

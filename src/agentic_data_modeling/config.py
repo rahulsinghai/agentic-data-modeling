@@ -2,14 +2,18 @@
 
 from pathlib import Path
 
+from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_prefix="ADM_", env_file=".env", extra="ignore")
+    model_config = SettingsConfigDict(
+        env_prefix="ADM_", env_file=".env", extra="ignore", populate_by_name=True
+    )
 
-    anthropic_api_key: str = ""
-    model: str = "claude-sonnet-4-6-20250514"
+    # Read from OPENAI_API_KEY (standard name), not ADM_OPENAI_API_KEY
+    openai_api_key: str = Field(default="", validation_alias="OPENAI_API_KEY")
+    model: str = "gpt-4o-mini"
     output_dir: Path = Path("output")
     max_tokens: int = 8192
     temperature: float = 0.0

@@ -24,13 +24,12 @@ from agentic_data_modeling.tools.profiling_tools import (
 
 
 def _make_llm():
-    from langchain_anthropic import ChatAnthropic
+    from langchain_openai import ChatOpenAI
 
     settings = get_settings()
-    return ChatAnthropic(
+    return ChatOpenAI(
         model=settings.model,
-        api_key=settings.anthropic_api_key,
-        max_tokens=settings.max_tokens,
+        api_key=settings.openai_api_key,
         temperature=settings.temperature,
     )
 

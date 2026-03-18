@@ -1,4 +1,4 @@
-"""Generate command — produce dbt, ERD, DDL, quality rules, docs."""
+"""Generate command; produce dbt, ERD, DDL, quality rules, docs."""
 
 from __future__ import annotations
 

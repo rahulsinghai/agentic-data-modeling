@@ -17,10 +17,10 @@ st.markdown(
     generate dbt models, ERDs, DDL, and data quality rules.
 
     **Navigate using the sidebar pages:**
-    1. **Profile** — Upload and profile source data
-    2. **Model** — Design dimensional model from requirements
-    3. **Generate** — Produce dbt models, ERD, DDL, quality rules
-    4. **Explore** — Run interactive SQL queries on your data
+    1. **Profile**; Upload and profile source data
+    2. **Model**; Design dimensional model from requirements
+    3. **Generate**; Produce dbt models, ERD, DDL, quality rules
+    4. **Explore**; Run interactive SQL queries on your data
     """
 )
 

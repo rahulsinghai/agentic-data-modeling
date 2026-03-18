@@ -1,4 +1,4 @@
-"""Model page — design dimensional model."""
+"""Model page; design dimensional model."""
 
 import streamlit as st
 
