@@ -1,0 +1,16 @@
+tour_id,tour_name,destination,category,duration_days,price_per_person,max_capacity
+1,Machu Picchu Trek,Peru,Adventure,7,1299,10
+2,Serengeti Safari,Tanzania,Wildlife,10,2499,10
+3,Amalfi Coast Drive,Italy,Cultural,5,899,15
+4,Kyoto Cherry Blossom,Japan,Cultural,6,1199,12
+5,Norwegian Fjords Cruise,Norway,Scenic,8,1799,12
+6,Amazon Rainforest,Brazil,Adventure,6,1099,12
+7,Sahara Desert Camp,Morocco,Adventure,4,699,10
+8,Great Barrier Reef Dive,Australia,Wildlife,5,999,10
+9,Northern Lights Hunt,Iceland,Scenic,5,1499,20
+10,Angkor Wat Explorer,Cambodia,Cultural,4,749,10
+11,Patagonia Hike,Argentina,Adventure,9,1599,10
+12,Greek Islands Sail,Greece,Leisure,7,1349,10
+13,Marrakech Medina Walk,Morocco,Cultural,3,499,12
+14,Galapagos Islands,Ecuador,Wildlife,8,2299,12
+15,Bali Temples & Rice,Indonesia,Cultural,5,849,10

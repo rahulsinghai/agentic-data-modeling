@@ -61,20 +61,66 @@ python --version
 uv sync
 ```
 
-### 3. Configure API key
+### 3. Configure LLM provider
+
+The pipeline supports **OpenAI** (cloud) or **Ollama** (local, free).
+
+#### Option A — OpenAI (default)
 
 ```bash
 cp .env.example .env
-# Edit .env; set OPENAI_API_KEY=sk-...
+# Edit .env and set your key:
+OPENAI_API_KEY=sk-...
+ADM_MODEL=gpt-4o-mini        # or gpt-4o, gpt-4-turbo, etc.
 ```
+
+#### Option B — Ollama (local, no API key)
+
+**1. Install Ollama**
+
+```bash
+# macOS
+brew install ollama
+
+# Linux
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+**2. Start the Ollama server**
+
+```bash
+ollama serve          # runs at http://localhost:11434
+```
+
+**3. Pull a model** (in a separate terminal)
+
+```bash
+ollama pull llama3.2          # recommended — fast, good tool-use
+# Other options:
+# ollama pull qwen2.5          # strong at structured output
+# ollama pull mistral          # lightweight
+```
+
+**4. Configure `.env`**
+
+```bash
+cp .env.example .env
+# Edit .env:
+ADM_PROVIDER=ollama
+ADM_OLLAMA_MODEL=llama3.2     # must match the model you pulled
+ADM_OLLAMA_BASE_URL=http://localhost:11434   # default, change if remote
+```
+
+> **Note:** Local models vary in tool-calling quality. `llama3.2` and `qwen2.5`
+> handle structured JSON output best. Smaller models may produce more retries.
 
 ### 4. Run
 
 ```bash
 # Full pipeline
-uv run adm run "Analyze ecommerce sales" \
-  --source-dir examples/data/ecommerce \
-  --output-dir output/
+uv run adm run examples/requirements/tours.md \
+  --source-dir examples/data/tours/ \
+  --output-dir output/tours/
 
 # Individual steps
 uv run adm profile examples/data/ecommerce
@@ -94,13 +140,13 @@ Upload CSVs, enter business requirements, and generate all artifacts interactive
 
 ## Tech Stack
 
-| Component     | Technology                                 |
-|---------------|--------------------------------------------|
-| Python        | 3.13.12 (pinned via `.python-version`)     |
-| Orchestration | LangGraph (StateGraph + conditional edges) |
-| LLM           | OpenAI GPT-4o-mini via langchain-openai    |
-| Data Engine   | DuckDB (in-memory)                         |
-| Domain Models | Pydantic v2                                |
+| Component     | Technology                                              |
+|---------------|---------------------------------------------------------|
+| Python        | 3.13.12 (pinned via `.python-version`)                  |
+| Orchestration | LangGraph (StateGraph + conditional edges)              |
+| LLM           | OpenAI or Ollama — switchable via `ADM_PROVIDER`        |
+| Data Engine   | DuckDB (in-memory)                                      |
+| Domain Models | Pydantic v2                                             |
 | Templates     | Jinja2                                     |
 | CLI           | Typer + Rich                               |
 | UI            | Streamlit                                  |

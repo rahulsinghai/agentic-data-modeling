@@ -31,13 +31,7 @@ def profile_cmd(
     start = time.monotonic()
     agent = create_profiler_agent()
     result = agent.invoke(
-        {
-            "messages": [
-                HumanMessage(
-                    content=f"Profile all data files in: {source_dir.resolve()}"
-                )
-            ]
-        },
+        {"messages": [HumanMessage(content=f"Profile all data files in: {source_dir.resolve()}")]},
         config={"callbacks": [handler]},
     )
 

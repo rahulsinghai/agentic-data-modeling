@@ -74,9 +74,7 @@ def model_cmd(
             else:
                 elapsed = time.monotonic() - start
                 live.update(Text(""))
-                console.print(
-                    f"  [green]✓[/green] {label} [dim]({elapsed:.1f}s)[/dim]"
-                )
+                console.print(f"  [green]✓[/green] {label} [dim]({elapsed:.1f}s)[/dim]")
 
     model_json = final_state.get("model_json", "")
     if model_json:

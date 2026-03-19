@@ -20,4 +20,4 @@ class AgentState(TypedDict):
     dbt_project_json: str
     quality_config_json: str
     artifacts: dict[str, str]
-    completed_agents: list[str]
+    completed_agents: Annotated[list[str], operator.add]

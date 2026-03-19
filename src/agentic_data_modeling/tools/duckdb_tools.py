@@ -3,9 +3,9 @@
 from __future__ import annotations
 
 import threading
+from collections.abc import Generator
 from contextlib import contextmanager
 from pathlib import Path
-from typing import Generator
 
 import duckdb
 from langchain_core.tools import tool
@@ -18,7 +18,7 @@ _lock = threading.RLock()
 
 
 @contextmanager
-def _db() -> Generator[duckdb.DuckDBPyConnection, None, None]:
+def _db() -> Generator[duckdb.DuckDBPyConnection]:
     """Acquire the lock and yield the shared connection."""
     with _lock:
         yield _connection
@@ -26,6 +26,10 @@ def _db() -> Generator[duckdb.DuckDBPyConnection, None, None]:
 
 def get_connection() -> duckdb.DuckDBPyConnection:
     return _connection
+
+
+# Public alias so other tool modules can acquire the lock for multi-step queries.
+locked_connection = _db
 
 
 def set_connection(conn: duckdb.DuckDBPyConnection | None) -> None:
@@ -84,9 +88,7 @@ def load_csv(file_path: str, table_name: str | None = None) -> str:
     name = table_name or path.stem
     try:
         with _db() as conn:
-            conn.execute(
-                f"CREATE OR REPLACE TABLE {name} AS SELECT * FROM read_csv_auto('{path}')"
-            )
+            conn.execute(f"CREATE OR REPLACE TABLE {name} AS SELECT * FROM read_csv_auto('{path}')")
             count = conn.execute(f"SELECT count(*) FROM {name}").fetchone()[0]
         return f"Loaded {count} rows into table '{name}' from {path.name}"
     except Exception as e:

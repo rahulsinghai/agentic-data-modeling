@@ -1,6 +1,7 @@
 """Application configuration via Pydantic Settings."""
 
 from pathlib import Path
+from typing import Literal
 
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -11,9 +12,20 @@ class Settings(BaseSettings):
         env_prefix="ADM_", env_file=".env", extra="ignore", populate_by_name=True
     )
 
-    # Read from OPENAI_API_KEY (standard name), not ADM_OPENAI_API_KEY
+    # ── Provider selection ────────────────────────────────────────────────────
+    # Set ADM_PROVIDER=ollama to use a local Ollama instance instead of OpenAI.
+    provider: Literal["openai", "ollama"] = "openai"
+
+    # ── OpenAI ────────────────────────────────────────────────────────────────
+    # Read from OPENAI_API_KEY (standard env var name), not ADM_OPENAI_API_KEY.
     openai_api_key: str = Field(default="", validation_alias="OPENAI_API_KEY")
     model: str = "gpt-4o-mini"
+
+    # ── Ollama ────────────────────────────────────────────────────────────────
+    ollama_base_url: str = "http://localhost:11434"
+    ollama_model: str = "llama3.2"
+
+    # ── Shared ────────────────────────────────────────────────────────────────
     output_dir: Path = Path("output")
     max_tokens: int = 8192
     temperature: float = 0.0

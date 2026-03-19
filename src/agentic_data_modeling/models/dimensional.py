@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from enum import StrEnum
 
-from pydantic import BaseModel, Field
+from pydantic import AliasChoices, BaseModel, ConfigDict, Field
 
 
 class SCDType(StrEnum):
@@ -30,7 +30,7 @@ class ColumnMapping(BaseModel):
 
 class DimensionAttribute(BaseModel):
     name: str
-    data_type: str
+    data_type: str = "VARCHAR"
     description: str = ""
     scd_type: SCDType = SCDType.TYPE_1
     source_mapping: ColumnMapping | None = None
@@ -47,7 +47,7 @@ class Dimension(BaseModel):
 
 class FactMeasure(BaseModel):
     name: str
-    data_type: str
+    data_type: str = "DOUBLE"
     aggregation: str = "sum"
     description: str = ""
     source_mapping: ColumnMapping | None = None
@@ -70,8 +70,18 @@ class Fact(BaseModel):
 
 
 class DimensionalModel(BaseModel):
-    name: str
+    model_config = ConfigDict(populate_by_name=True)
+
+    name: str = "dimensional_model"
     description: str = ""
-    facts: list[Fact] = Field(default_factory=list)
-    dimensions: list[Dimension] = Field(default_factory=list)
+    # Accept both "facts" and "fact_tables" (LLM sometimes uses the latter)
+    facts: list[Fact] = Field(
+        default_factory=list,
+        validation_alias=AliasChoices("facts", "fact_tables"),
+    )
+    # Accept both "dimensions" and "dimension_tables"
+    dimensions: list[Dimension] = Field(
+        default_factory=list,
+        validation_alias=AliasChoices("dimensions", "dimension_tables"),
+    )
     business_requirements: str = ""

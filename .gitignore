@@ -103,6 +103,7 @@ lib64/
 local_settings.py
 nosetests.xml
 out/
+output/
 parts/
 pip-delete-this-directory.txt
 pip-log.txt
